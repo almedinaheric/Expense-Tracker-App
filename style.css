@@ -1,0 +1,241 @@
+:root{
+    --income-color:#81B179;
+    --expense-color:#DD5757;
+    --wrapper-backgroung-color:rgb(238, 238, 238);
+    --total-balance-color:#3e88ff;
+    --addTransaction-button-color:#276fe3;
+    --delete-button-color:rgb(215, 14, 14);
+    --addNewHistory-color:rgb(224, 224, 224);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    border-radius: 4px;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+    padding: 24px;
+}
+
+.wrapper{
+    background-color:var(--wrapper-backgroung-color);
+    width: 80%;
+    height: 90%;
+    margin: auto;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.totalBalance{
+    background-color:var(--total-balance-color);
+    width: 30%;
+    margin: 8px auto;
+    padding: 8px 24px ;
+    text-align: center;
+}
+
+.totalBalance p, .income p,.expense p{
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+.incomeExpense{
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 8px auto;
+}
+
+.income,.expense{
+    width: 30%;
+    padding: 8px 24px;
+}
+
+.income{
+    background-color: var(--income-color);
+}
+
+.expense{
+    background-color: var(--expense-color);
+}
+
+.newAndHistory{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+    width: 100%;
+    height: 60%;
+}
+
+.newAndHistory h3{
+    font-weight: 500;
+}
+
+.newAndHistory hr{
+    margin: 8px 0;
+    width: 8%;
+    border: 1px solid black;
+}
+
+.addNew{
+    background-color: var(--addNewHistory-color);
+    width: 50%;
+    padding:16px 32px;
+    border-right: 1px solid rgb(194, 194, 194);
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;;
+}
+
+.addNew label{
+    margin-top: 16px;
+    font-weight: 300;
+    display: block;
+}
+
+.addNew input{
+    margin-top: 4px;
+    width: 70%;
+    padding: 16px;
+    border: none;
+    display: block;
+}
+
+.addNew #buttonAdd{
+    margin-top: 16px;
+    padding: 8px 16px;
+    background-color:var(--addTransaction-button-color);
+    border: 1px solid var(--addTransaction-button-color);
+    color: white;
+}
+
+.addNew #buttonAdd:hover{
+    background-color: white;
+    color: var(--addTransaction-button-color);
+}
+
+.history{
+    background-color: var(--addNewHistory-color);
+    width: 50%;
+    padding:16px 32px;
+}
+
+.newEmptyTransaction{
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 16px;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.newEmptyTransaction button{
+    width: 8%;
+    padding: 8px;
+    border: 1px solid var(--delete-button-color);
+    background-color: var(--delete-button-color);
+    color:  white;
+    font-weight: 900;
+}
+
+.newEmptyTransaction button:hover{
+    background-color:white ;
+    color: var(--delete-button-color);
+}
+
+.listOfTransactions{
+    padding: 8px 0px;
+    height: 90%;
+    overflow-y: auto;
+}
+
+#transactionDate,.listOfTransactions #amount{
+    width:20%;
+}
+
+#transactionText{
+    width: 40%; 
+    overflow-x: auto;
+}
+
+@media screen and (max-width:767px) {
+    html,body{
+        padding: 8px;
+    }
+
+    .wrapper{
+        background-color:transparent;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        padding: 4px;
+        display: block;
+    }
+    
+    .totalBalance{
+        width: 80%;
+    }
+    
+    .incomeExpense{
+        gap: 16px;
+        width: 90%;
+        margin: 8px auto;
+    }
+    
+    .income,.expense{
+        width: 50%;
+    }
+    
+    .newAndHistory{
+        flex-direction: column;
+    }
+    
+    .newAndHistory hr{
+        width: 16%;
+    }
+    
+    .addNew{
+        height: 100%;
+        width: 100%;
+        border-right: none;
+        margin-bottom: 8px;
+        border-radius: 4px;
+    }
+    
+    .addNew input{
+        width: 100%;
+        font-size: 10px;
+    }
+
+    .history{
+        width: 100%;
+        height: 80%;
+    }
+    
+    .newEmptyTransaction{
+        padding: 8px;
+        margin-bottom: 8px;    
+        width: 100%;
+        font-size: x-small;
+    }
+
+    
+    /*.newEmptyTransaction button{
+        padding: 4px;
+        font-weight: 800;
+    }*/
+    
+    #transactionText{
+        width: 30%; 
+    }
+    
+}
